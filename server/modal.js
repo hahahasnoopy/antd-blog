@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
-const bcrypt  = require('bcryptjs');
+const crypto = require('crypto');
+const config = require('./config/config');
+
+mongoose.Promise = require('bluebird'); //replace built-in promise mechanism by bluebird
+
 mongoose.connect('mongodb://localhost:27017/express_demo',
   {
     useNewUrlParser: true,
@@ -15,7 +19,8 @@ mongoose.connect('mongodb://localhost:27017/express_demo',
 const User = mongoose.model('User',new mongoose.Schema({
   username:{type: String,unique:true},
   password:{type: String,set(val){
-    return bcrypt.hashSync(val,10)
+    let md5 = crypto.createHash('md5');
+    return md5.update(val+config.MD5_SUFFIX).digest('hex')
   }},
 }));
 
@@ -29,7 +34,7 @@ const Article = mongoose.model('Article',new mongoose.Schema({
 }));
 
 const Tags = mongoose.model('Tags',new mongoose.Schema({
-  name:String
+  name:{type:String,unique: true}
 }));
 
 module.exports = {User, Article, Tags};

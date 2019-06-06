@@ -3,9 +3,7 @@ const express = require('express') ;
 const config = require('./config/config');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-// const bcrypt = require('bcryptjs');
-// const jwt = require('jsonwebtoken')
-
+const crypto = require('crypto');
 const app = express();
 
 app.use(express.json());
@@ -16,9 +14,12 @@ app.use(session({
   saveUninitialized:true,
   cookie:{maxAge:60*1000*30} // session 过期时间
 }));
+
 app.get('/',async(req,res)=>{
   res.send('hello')
 });
+
+app.use('/admin', require('./admin'))
 
 app.get('/users',async(req,res)=>{
   const users = await User.find();
@@ -32,33 +33,33 @@ app.post('/register',async(req,res)=>{
 });
   res.send(user)
 });
-// const auth = async(req,res,next)=>{  //将token鉴定写成中间件的形式
-//   const raw = req.headers.authorization.split(" ").pop()
-//   const {id} = jwt.verify(raw,process.env.SECRET)
-//   req.user = await User.findById(id)
-//   next()
-// }
+
 app.post('/login',async(req,res)=>{
+  const {username,password} = req.body
   const user = await User.findOne({
-    username:req.body.username
+    username
   });
   if(!user){
     res.status(422).send({message:'user not exist'})
   }else{
-    // if(bcrypt.compareSync(req.body.password, user.password)){
-    //   const token = jwt.sign({
-    //     id:String(user._id)
-    //   },process.env.SECRET)
-    //   res.send({message:'login success',token:token})
-    // }else{
-    //   res.send({message:'invalid password'})
-    // }
+    let md5 = crypto.createHash('md5');
+    User.findOne({
+      username,
+      password:md5.update(password + config.MD5_SUFFIX).digest('hex')
+    }).then(
+      (info) =>{
+        req.session.userInfo = info
+        res.send({message:'login success'})
+      }
+    ).catch(
+      () =>res.send({message:'invalid password'})
+    )
   }
 });
 
-app.get('/profile',async(req,res)=>{
-  res.send(req.user)
-});
+app.get('/logout',(req,res)=>{
+  req.session.destroy();
+})
 
 app.listen(3001,()=>{
   console.log("http://localhost:3001")
