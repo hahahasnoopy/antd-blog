@@ -1,0 +1,14 @@
+[
+  {
+    "_id": "5ce4a2219db6de73ec05350e",
+    "username": "user1",
+    "password": "123455",
+    "__v": 0
+  },
+  {
+    "_id": "5cf0ea79e9f88a734cbe660a",
+    "username": "user2",
+    "password": "$2a$10$1s88gZCuqlwlWSw.0e0GwOG0DJnUD0OcFFX3408dTXTm1OS29xpn.",
+    "__v": 0
+  }
+]

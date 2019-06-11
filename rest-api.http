@@ -1,0 +1,83 @@
+GET http://localhost:3001/users
+Accept: */*
+Content-Type: application/json
+
+<> 2019-06-05T024717.200.json
+###
+
+POST http://localhost:3001/register
+Content-Type: application/json
+
+{
+  "username": "mao",
+  "password": "lei"
+}
+
+<> 2019-06-05T025741.200.json
+
+###
+
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+  "password": "lei",
+  "username": "mao"
+}
+
+<> 2019-06-05T055337.200.json
+<> 2019-06-05T041605.200.json
+
+
+###
+
+POST http://localhost:3001/admin/article/addArticle
+Content-Type: application/json
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+<> 2019-06-06T022712.200.json
+
+###
+
+GET http://localhost:3001/admin/article/delArticle?id=5cf87ce5cf0dab38e8292001
+
+<> 2019-06-06T022533.200.json
+
+###
+
+POST http://localhost:3001/admin/article/updateArticle
+Content-Type: application/json
+
+{
+  "title": "mytitle",
+  "content": "update content",
+  "time": "time",
+  "tags": "tags",
+  "id": "5cf8b2407f2ca00fb082d435"
+}
+
+<> 2019-06-06T025604.200.json
+
+###
+
+POST http://localhost:3001/admin/tags/addTag
+Content-Type: application/json
+
+{
+  "name":"javascript"
+}
+
+<> 2019-06-06T044518.200.json
+###
+
+GET http://localhost:3001/admin/tags/delTag?name=javascript
+
+<> 2019-06-06T044719.200.json
+
+###

@@ -1,0 +1,539 @@
+GET http://localhost:3001/users
+Accept: */*
+Content-Type: application/json
+
+###
+
+GET http://localhost:3001/admin/tags/delTag?name=javascript
+
+<> 2019-06-06T044719.200.json
+
+###
+
+POST http://localhost:3001/admin/tags/addTag
+Content-Type: application/json
+
+{
+  "name":"javascript"
+}
+
+<> 2019-06-06T044518.200.json
+
+###
+
+POST http://localhost:3001/admin/tags/addTag
+Content-Type: application/json
+
+{
+  "name":"javascript"
+}
+
+###
+
+POST http://localhost:3001/admin/tags/addTag
+Content-Type: application/json
+
+{
+  "name":"javascript"
+}
+
+<> 2019-06-06T044027.404.html
+
+###
+
+POST http://localhost:3001/admin/article/addTag
+Content-Type: application/json
+
+{
+  "name":"javascript"
+}
+
+<> 2019-06-06T043814.404.html
+
+###
+
+POST http://localhost:3001/admin/article/updateArticle
+Content-Type: application/json
+
+{
+  "title": "mytitle",
+  "content": "update content",
+  "time": "time",
+  "tags": "tags",
+  "id": "5cf8b2407f2ca00fb082d435"
+}
+
+<> 2019-06-06T025604.200.json
+
+###
+
+POST http://localhost:3001/admin/article/updateArticle
+Content-Type: application/json
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags",
+  "id": "5cf8b2407f2ca00fb082d435"
+}
+
+<> 2019-06-06T025528.200.json
+
+###
+
+POST http://localhost:3001/admin/article/updateArticle
+Content-Type: application/json
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags",
+  "_id": "5cf8b2407f2ca00fb082d435"
+}
+
+<> 2019-06-06T024556.500.json
+
+###
+
+POST http://localhost:3001/admin/article/addArticle
+Content-Type: application/json
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+<> 2019-06-06T022712.200.json
+
+###
+
+POST http://localhost:3001/admin/article/addArticle
+Content-Type: application/json
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+###
+
+POST http://localhost:3001/admin/article/addArticle
+Content-Type: application/json
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+<> 2019-06-06T022701.500.html
+
+###
+
+POST http://localhost:3001/admin/article/addArticle
+Content-Type: application/json
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+<> 2019-06-06T022611.500.html
+
+###
+
+GET http://localhost:3001/admin/article/delArticle?id=5cf87ce5cf0dab38e8292001
+
+<> 2019-06-06T022533.200.json
+
+###
+
+GET http://localhost:3001/admin/article/delArticle
+
+###
+
+GET http://localhost:3001/admin/article/delArticle
+
+<> 2019-06-06T021057.200.json
+
+###
+
+GET http://localhost:3001/admin/article/delArticle
+
+<> 2019-06-06T020806.200.json
+
+###
+
+GET http://localhost:3001/admin/article/delArticle
+
+<> 2019-06-06T020803.200.json
+
+###
+
+GET http://localhost:3001/admin/article/delArticle
+
+<> 2019-06-06T020752.200.json
+
+###
+
+GET http://localhost:3001/admin/article/delArticle
+
+<> 2019-06-06T020708.404.html
+
+###
+
+GET http://localhost:3001/admin/article/delArticle
+
+<> 2019-06-06T020511.404.html
+
+###
+
+GET http://localhost:3001/admin/article/delArticle?id=5cf87ce5cf0dab38e8292001
+
+<> 2019-06-06T020439.404.html
+
+###
+
+GET http://localhost:3001/admin/article/delArticle?id=5cf87ce5cf0dab38e8292001
+
+<> 2019-06-06T020405.404.html
+
+###
+
+POST http://localhost:3001/admin/article/delArticle?id=5cf87ce5cf0dab38e8292001
+Content-Type: application/json
+
+<> 2019-06-06T020333.400.html
+
+###
+
+POST http://localhost:3001/admin/article/addArticle
+Content-Type: application/json
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+<> 2019-06-06T103933.200.json
+
+###
+
+POST http://localhost:3001/admin/article/addArticle
+Content-Type: application/json
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+<> 2019-06-06T102736.440.json
+
+###
+
+POST http://localhost:3001/admin/article/addArticle
+Content-Type: application/json
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+<> 2019-06-06T102707.440.json
+
+###
+
+POST http://localhost:3001/admin/article/addArticle
+Content-Type: application/json
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+<> 2019-06-06T102602.440.json
+
+###
+
+POST http://localhost:3001/admin/article/addArticle
+Content-Type: application/json
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+<> 2019-06-05T060359.500.html
+
+###
+
+POST http://localhost:3001/admin/article/addArticle
+Content-Type: application/json
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+<> 2019-06-05T060352.440.json
+
+###
+
+POST http://localhost:3001/admin/article/addArticle
+Content-Type: application/json
+Cookie: connect.sid=s%3AKvrmBKnt47yBbb_UStYP2q5wfWktwkBr.jPF553YvmvyzB8WFyRYcNNUopoCEo3x2bjcMvNEWP00
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+<> 2019-06-05T055359.440.json
+
+###
+
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+  "password": "lei",
+  "username": "mao"
+}
+
+<> 2019-06-05T055337.200.json
+
+###
+
+POST http://localhost:3001/register
+Content-Type: application/json
+
+{
+  "username": "mao",
+  "password": "lei"
+}
+
+<> 2019-06-05T055320.500.html
+
+###
+
+POST http://localhost:3001/admin/article/addArticle
+Content-Type: application/json
+Cookie: connect.sid=s%3Am5ftBtpODMTq6K8gPup2bA0BQHe_-pIV.Vm4ciDXdYf3iyCk4wU%2F1pBwi0IDLcEOmK0uACf3NnAc
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+<> 2019-06-05T055251.440.json
+
+###
+
+POST http://localhost:3001/admin/article
+Content-Type: application/json
+Cookie: connect.sid=s%3Am5ftBtpODMTq6K8gPup2bA0BQHe_-pIV.Vm4ciDXdYf3iyCk4wU%2F1pBwi0IDLcEOmK0uACf3NnAc
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+###
+
+POST http://localhost:3001/admin/article
+Content-Type: application/json
+Cookie: connect.sid=s%3Am5ftBtpODMTq6K8gPup2bA0BQHe_-pIV.Vm4ciDXdYf3iyCk4wU%2F1pBwi0IDLcEOmK0uACf3NnAc
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+###
+
+POST http://localhost:3001/admin/article
+Content-Type: application/json
+Cookie: connect.sid=s%3Am5ftBtpODMTq6K8gPup2bA0BQHe_-pIV.Vm4ciDXdYf3iyCk4wU%2F1pBwi0IDLcEOmK0uACf3NnAc
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+###
+
+POST http://localhost:3001/admin/article/addArticle
+Content-Type: application/json
+Cookie: connect.sid=s%3Am5ftBtpODMTq6K8gPup2bA0BQHe_-pIV.Vm4ciDXdYf3iyCk4wU%2F1pBwi0IDLcEOmK0uACf3NnAc
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+<> 2019-06-05T054321.404.html
+
+###
+
+POST http://localhost:3001/admin/addArticle
+Content-Type: application/json
+Cookie: connect.sid=s%3Am5ftBtpODMTq6K8gPup2bA0BQHe_-pIV.Vm4ciDXdYf3iyCk4wU%2F1pBwi0IDLcEOmK0uACf3NnAc
+
+{
+  "title": "mytitle",
+  "content": "content",
+  "time": "time",
+  "tags": "tags"
+}
+
+<> 2019-06-05T054052.404.html
+
+###
+
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+  "password": "lei",
+  "username": "mao"
+}
+
+<> 2019-06-05T041605.200.json
+
+###
+
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+  "password": "lei",
+  "username": "mao"
+}
+
+<> 2019-06-05T041310.200.json
+
+###
+
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+  "password": "lei",
+  "username": "mao"
+}
+
+<> 2019-06-05T040517.200.json
+
+###
+
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+  "username": "mao",
+  "password": "lei"
+}
+
+<> 2019-06-05T025940.200.json
+
+###
+
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+  "username": "mao",
+  "password": "lei"
+}
+
+<> 2019-06-05T025834.500.html
+
+###
+
+POST http://localhost:3001/register
+Content-Type: application/json
+
+{
+  "username": "mao",
+  "password": "lei"
+}
+
+<> 2019-06-05T025741.200.json
+
+###
+
+GET http://localhost:3001/users
+Accept: */*
+Content-Type: application/json
+Cache-Control: no-cache
+
+<> 2019-06-05T024717.200.json
+
+###
+
+GET http://localhost:3001/users
+Accept: */*
+Content-Type: application/json
+Cache-Control: no-cache
+
+<> 2019-06-05T024411.502.html
+
+###
+
+GET http://localhost:3001/users
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-06-05T024239.502.html
+
+###
+
+GET http://localhost:3001
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-06-05T024142.502.html
+
+###
+
+GET http://localhost:8080/resources
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-06-05T024051.502.html
+
+###
+

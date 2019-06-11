@@ -36,4 +36,9 @@ router.get('/delTag',(req,res)=>{
   )
 });
 
+router.get('/allTags',async (req,res)=>{
+  const allTags = await Tags.find();
+  res.send(allTags)
+});
+
 module.exports = router;

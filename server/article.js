@@ -2,7 +2,7 @@
  * 文章管理操作
  */
 const express = require('express');
-const {Article} = require('./modal');
+const {Article,Tags} = require('./modal');
 const router =express.Router();
 
 /**
@@ -12,6 +12,19 @@ router.post('/addArticle',async (req,res)=>{
   const { title,content,time,tags } = req.body;
   const author = process.env.NODE_ENV ==='development'?'hahahasnoopy':req.session.userInfo.username;
   const viewCount = 0;
+  console.log(tags)
+  tags.forEach(tag=>  //判断tag是否存在，没有就加入添加新的tag
+    {
+      Tags.findOne({name:tag}).then(
+        val =>{
+          if(!val){
+            console.log('saving')
+            Tags.create({name:tag})
+          }
+        }
+      )
+    }
+  );
   new Article({
     title,content,time,tags,author,viewCount
   }).save().then(
