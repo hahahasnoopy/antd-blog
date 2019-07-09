@@ -3,16 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './reset.css'
 import App from './App';
-import Admin from './Admin'
+import { Provider } from 'react-redux';
+import Admin from './components/Admin'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
+import { createStore } from 'redux';
+import reducers from 'reducers';
 
+const store = createStore(reducers)
 // ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render((
-  <Router >
-    <Route exact path='/' component= {App}/>
-    <Route path='/admin/' component={Admin}/>
-  </Router> 
+  <Provider store={store}>
+    <Router>
+      <Route exact path='/' component= {App}/>
+      <Route path='/admin/' component={Admin}/>
+    </Router> 
+  </Provider>
 ),
    document.getElementById('root'));
 

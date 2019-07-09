@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Table } from 'antd';
 import axios from 'axios'
-import { UserType } from './types/index'
+import { UserType } from '../../types/index'
 const columns = [
 {
   title:'ID',
@@ -41,7 +41,7 @@ export class User extends Component {
     return (
       <div>
         <Table dataSource = {this.state.UsersData} columns = {columns} 
-          rowKey = {(record:UserType,index:number)=>record._id}></Table>
+          rowKey = {(record:UserType)=>record._id}></Table>
       </div>
     )
   }

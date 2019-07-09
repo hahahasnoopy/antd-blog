@@ -66,6 +66,9 @@ Content-Type: application/json
 
 ###
 
+GET http://localhost:3001/admin/article/allArticle
+
+###
 POST http://localhost:3001/admin/tags/addTag
 Content-Type: application/json
 

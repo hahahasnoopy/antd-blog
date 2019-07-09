@@ -65,4 +65,10 @@ router.get('/delArticle',(req,res)=>{
   )
 });
 
+router.get('/allArticle',(req,res)=>{
+  Article.find().then(
+    val=>
+      res.send(val)
+  )
+});
 module.exports = router;

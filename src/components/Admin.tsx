@@ -3,9 +3,10 @@ import { Layout, Menu, Icon } from 'antd';
 import './Admin.css'
 import {Link, Route, Switch} from "react-router-dom";
 import DashBoard from './DashBoard';
-import User from './User';
+import User from '../containers/User';
 import Article from './Article';
 import SubMenu from 'antd/lib/menu/SubMenu';
+import AllArticle from 'components/AllArticle';
 const { Header, Sider, Content } = Layout;
 
 interface Props {
@@ -48,6 +49,11 @@ class Sidebar extends React.Component<Props,State> {
                 <Icon type = 'video-camera'/>
                 <span>增加文章</span>
               </Menu.Item>
+              <Menu.Item key ='sub1-2'>
+                <Link to={'/admin/allArticle'}/>
+                <Icon type = 'facebook'/>
+                <span>所有文章</span>
+              </Menu.Item>
             </SubMenu>
             <Menu.Item key ='3'>
               <Link to={'/admin/user'}/>
@@ -75,6 +81,7 @@ class Sidebar extends React.Component<Props,State> {
             <Switch>
               <Route exact path='/admin' component = {DashBoard}/>
               <Route path='/admin/article' component = {Article}/>
+              <Route path='/admin/allArticle' component = {AllArticle}/>
               <Route path='/admin/user' component = {User}/>
             </Switch>
           </Content>
