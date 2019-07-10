@@ -2,20 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './reset.css'
-import App from './App';
-import { Provider } from 'react-redux';
+// import App from './App';
 import Admin from './components/Admin'
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Provider } from 'mobx-react';
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
-import { createStore } from 'redux';
-import reducers from 'reducers';
+import articleStore from './stores/articleStore'
 
-const store = createStore(reducers)
-// ReactDOM.render(<App />, document.getElementById('root'));
+const stores = {
+  articleStore
+}
+
 ReactDOM.render((
-  <Provider store={store}>
+  <Provider {...stores}>
     <Router>
-      <Route exact path='/' component= {App}/>
+      <Route exact path='/' render={()=>{
+        return <Redirect to='/admin/'></Redirect>
+      }}/>
       <Route path='/admin/' component={Admin}/>
     </Router> 
   </Provider>
