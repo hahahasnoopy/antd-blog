@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react'
+import React, { useEffect } from 'react'
 // @ts-ignore
 import Editor from 'for-editor'
 import Axios from 'axios';
@@ -50,7 +50,7 @@ const Article = inject('articleStore')(observer(
           标签选择：
           <Select mode="tags" placeholder="choose a tag"
             defaultValue = {editingArticle.tags}
-            onChange={(val:string)=>setArticle({tags:val})}
+            onChange={(val:string[])=>setArticle({tags:val})}
             style={{width:'70%'}}
           >
 
@@ -61,7 +61,8 @@ const Article = inject('articleStore')(observer(
         </Col>
       </Row>
 
-      <Editor value={editingArticle.content} onChange={(value:string)=>setArticle({content:value})}
+      <Editor value={editingArticle.content} 
+        onChange={(value:string)=>setArticle({content:value})}
         onSave={saveContent}
       ></Editor>
     </div>

@@ -16,9 +16,12 @@ post {{url}}/login
 {{json}}
 
 {
-  "username":"user2",
-  "password":"qwerty"
+  "username":"user1",
+  "password":"123455"
 }
+
+### 登出
+get {{url}}/logout
 
 ### 所有用户
 get {{url}}/users

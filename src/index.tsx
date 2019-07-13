@@ -8,6 +8,8 @@ import { Provider } from 'mobx-react';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
 import articleStore from './stores/articleStore'
+import Layout from 'components/Layout/Index';
+import App from 'App';
 
 const stores = {
   articleStore
@@ -15,13 +17,17 @@ const stores = {
 
 ReactDOM.render((
   <Provider {...stores}>
-    <Router>
-      <Route exact path='/' render={()=>{
-        return <Redirect to='/admin/'></Redirect>
-      }}/>
-      <Route path='/admin/' component={Admin}/>
-    </Router> 
-  </Provider>
+      <Router>
+        <Layout>
+          {/* <Route exact path='/' render={()=>{
+            return <Redirect to='/admin/'></Redirect>
+          }}/> */}
+          <Route path='/admin/' component={Admin}/>
+          
+          <Route exact path='/' component={App}/>
+        </Layout>
+      </Router> 
+    </Provider>
 ),
    document.getElementById('root'));
 

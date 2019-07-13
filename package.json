@@ -20,6 +20,7 @@
     "cross-env": "^5.2.0",
     "customize-cra": "^0.2.12",
     "dotenv": "^8.0.0",
+    "enquire.js": "^2.1.6",
     "eslint": "^5.16.0",
     "express": "^5.0.0-alpha.7",
     "express-session": "^1.16.1",
@@ -57,6 +58,7 @@
     ]
   },
   "devDependencies": {
+    "@types/enquire.js": "^2.1.2",
     "@types/react-redux": "^7.1.0"
   }
 }

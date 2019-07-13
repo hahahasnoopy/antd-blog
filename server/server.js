@@ -59,8 +59,9 @@ app.post('/login',async(req,res)=>{
 
 app.get('/logout',(req,res)=>{
   req.session.destroy();
+  res.send({message:'succeed'})
 })
 
 app.listen(3001,()=>{
-  console.log("http://localhost:3001")
+  console.log("listening to http://localhost:3001")
 });
